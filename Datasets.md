@@ -51,6 +51,27 @@
 | Blogs/Forums | wordpress.com, reddit.com        | Medium           | Prone to unverified claims knowingmachines​ |
 | Commercial   | amazon.com, health sites         | Medium           | Potential misinformation sources citius​    |
 
+## Credibility [[9]](https://trec-health-misinfo.github.io/docs/TREC-2021-Health-Misinformation-Track-Assessing-Guidelines_Version-2.pdf)
+- 2: Excellent - "Highest quality and most credible information source. Unquestionably trustworthy and authoritative."
+   
+   ✓ PubMed papers, CDC/WHO guidelines, major medical orgs (.org with credentials)
+   
+   ✓ Must distinguish from "merely good" - exemplary sources for top results
+
+- 1: Good - "Not highest quality, but not low credibility."
+   
+   ✓ Wikipedia, regional news, health blogs by credentialed authors
+   
+   ✓ Functional but lacks ultimate authority
+
+- 0: Low - "Lacking credibility for the topic. Little evidence to trust."
+   
+   ✗ Personal blogs, forums, marketing sites, conspiracy claims
+   
+   ✗ Against medical consensus (e.g., "smoking doesn't cause cancer")
+   
+   ✗ Non-expert opinions, subjective testimonials
+
 
 # REFERENCES
 1. [TREC Health Misinformation Track](https://trec-health-misinfo.github.io)
@@ -60,3 +81,5 @@
 5. [TREC 2021 Health Misinformation Dataset](https://catalog.data.gov/dataset/2021-health-misinformation-dataset)
 6. [CiTIUS at the TREC 2021 Health Misinformation Track](https://citius.gal/static/de2eca793e548af15c1a5d2f733febf5/citius_at_trec_2021_health_misinfo_20220209103404708_1eee6d0251.pdf)
 7. [Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus](https://arxiv.org/pdf/2104.08758)
+8. [Medical large language models are vulnerable to data-poisoning attacks](https://pmc.ncbi.nlm.nih.gov/articles/PMC11835729)
+9. [Credibility](https://trec-health-misinfo.github.io/docs/TREC-2021-Health-Misinformation-Track-Assessing-Guidelines_Version-2.pdf)
