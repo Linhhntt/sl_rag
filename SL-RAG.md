@@ -3,7 +3,7 @@
 ## Motivation
 The motivation concentrates on the "safety-critical" nature of high-stakes domains such as healthcare and "trustworthy decisions" overcoming the failure instances of Retrieval-Augmented Generation (RAG).
 
-- "Trust Paradox": RAGs is touted as the solution to LLM hallucinations by supplementing up-to-date information. However, the reliance on an external knowledge base from unrestricted public sources, RAGs can degrade the performance when LLMs absorb and reproduce misinformation present during the retrieval process. In [[1]](https://arxiv.org/pdf/2509.03787), they found that in adversarial settings, models often perform better without retrieval because they aren't being fed "poisoned" context.
+- "Trust Paradox": RAGs is touted as the solution to LLM hallucinations by supplementing up-to-date information. However, the reliance on an external knowledge base from unrestricted public sources, RAGs can degrade the performance when LLMs absorb and reproduce misinformation or bias present during the retrieval process [[16]](https://arxiv.org/pdf/2502.06872). In [[1]](https://arxiv.org/pdf/2509.03787), they found that in adversarial settings, models often perform better without retrieval because they aren't being fed "poisoned" context.
 
 - High-stakes decision-making domains: an error is not only a bad user experience, but also a dangerous misjudgments. Accuracy alone is insufficient. Especially, when users ask ambiguous, underspecified, or unanswerable questions, making it essential that LLMs can withhold an answer and admit uncertainty. For instance, in clinical decision support, overconfident or fabricated answers can jeopardize patient safety. Such abstention is vital for preventing harmful errors and is increasingly recognized as key to trustworthy NLP [[13]](https://arxiv.org/pdf/2601.12471).
 
@@ -100,9 +100,10 @@ graph TD
 - **Standard RAG (Top-K)**: the model receives the top $k$ documents based on cosine similarity
 
 ### 2. Robustness frameworks
-- **ReliabilityRAG** [[5]](https://arxiv.org/abs/2509.23519): build a Contradiction Graph and then find the "Maximum Independent Set" that shares a similar view as the final context
+- **ReliabilityRAG** [[5]](https://arxiv.org/abs/2509.23519): build a Contradiction Graph and then find the "Maximum Independent Set" that shares a similar view as the final context -> binary (contradict vs. not).
 - **RobustRAG** [[6]](https://arxiv.org/abs/2405.15556) uses a "majority vote" --> throws away data to find a consensus
 - **Transparent Conflict Resolution** [[8]](https://arxiv.org/abs/2601.06842): This method disentangles "semantic match" from "factual consistency." It uses a dual-encoder to flag when a document is relevant but factually inconsistent with the model's internal knowledge.
+- MEGA-RAG
 
 
 # REFERENCES
@@ -120,3 +121,5 @@ graph TD
 12. [Xia, T., Li, W., Liu, G., & Li, Y. (2026). AutoHealth: An Uncertainty-Aware Multi-Agent System for Autonomous Health Data Modeling. arXiv preprint arXiv:2602.01078.](https://arxiv.org/pdf/2602.01078)
 13. [A Comprehensive Survey of AI Agents in Healthcare (2025)](https://www.techrxiv.org/users/994756/articles/1355990-a-comprehensive-survey-of-agentic-ai-in-healthcare)
 14. [Machcha, S., Yerra, S., Gupta, S., Sahoo, A., Sultana, S., Yu, H., & Yao, Z. (2026). Knowing When to Abstain: Medical LLMs Under Clinical Uncertainty. arXiv preprint arXiv:2601.12471.](https://arxiv.org/pdf/2601.12471)
+15. [Zhou, Y., Liu, Y., Li, X., Jin, J., Qian, H., Liu, Z., ... & Yu, P. S. (2024). Trustworthiness in retrieval-augmented generation systems: A survey. arXiv preprint arXiv:2409.10102.](https://arxiv.org/pdf/2409.10102)
+16. [Ni, B., Liu, Z., Wang, L., Lei, Y., Zhao, Y., Cheng, X., ... & Derr, T. (2025). Towards trustworthy retrieval augmented generation for large language models: A survey. arXiv preprint arXiv:2502.06872.](https://arxiv.org/pdf/2502.06872)
