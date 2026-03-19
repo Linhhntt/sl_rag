@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
 from langchain_ollama import OllamaEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain_classic.chains import RetrievalQA
@@ -16,7 +16,7 @@ llm = ChatOpenAI(
 
 # Load the DB
 embeddings = OllamaEmbeddings(model=os.getenv("EMBEDDING_MODEL"))
-vector_db = Chroma(persist_directory="./chroma_db", embedding_function=embeddings)
+vector_db = Chroma(collection_name="rag_collection", persist_directory="./chroma_db", embedding_function=embeddings)
 
 # Simple RAG Chain
 def query_rag(query):
