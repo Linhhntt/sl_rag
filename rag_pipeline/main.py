@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import OllamaEmbeddings
+from langchain_ollama import OllamaEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain_classic.chains import RetrievalQA
 
