@@ -1,6 +1,8 @@
-# TREC Health Misinformation Datasets
+# Medical Dataset
 
-## Overview
+## 1. TREC Health Misinformation Datasets 2021
+
+### Overview
 - Designed to test retrieval systems on health queries where incorrect info can harm decisions.
 - Components:
     - **Topics/Queries (50 total)** with fields: query text, description (question), narrative (criteria), stance (helpful/unhelpful), evidence URL
@@ -21,7 +23,7 @@
     | Use Case    | Corpus for indexing/embedding | Misinfo retrieval benchmarking citius​    |
     | ir_datasets | docs_iter()                   | queries_iter(), qrels_iter() ir-datasets​ |
 
-## C4 in Hugging Face 
+### C4 in Hugging Face 
 - A colossal, cleaned version of Common Crawl's web crawl corpus. Based on [Common Crawl dataset](https://commoncrawl.org).
 - This is the processed version of Google's C4 dataset
 - They provided five variants of the data: en, en.noclean, en.noblocklist, realnewslike, and multilingual (mC4).
@@ -36,7 +38,7 @@
 - Samples: 
 ![Dataset samples](figures/dataset_samples.jpg)
 
-## Source Types
+### Source Types
 - Source: lacking explicit source type labels, but categorization is analysed 
     - URL Domain Tracking: News sites (e.g., nytimes.com) vs. blogs (e.g., wordpress.com) vs. forums (e.g., reddit.com)
     - Text patterns: scientific (mentions studies/journals), commercial (product ads), social media (short posts/hashtags), or forums (Q&A style)
@@ -51,7 +53,7 @@
 | Blogs/Forums | wordpress.com, reddit.com        | Medium           | Prone to unverified claims knowingmachines​ |
 | Commercial   | amazon.com, health sites         | Medium           | Potential misinformation sources citius​    |
 
-## Credibility [[9]](https://trec-health-misinfo.github.io/docs/TREC-2021-Health-Misinformation-Track-Assessing-Guidelines_Version-2.pdf)
+### Credibility [[9]](https://trec-health-misinfo.github.io/docs/TREC-2021-Health-Misinformation-Track-Assessing-Guidelines_Version-2.pdf)
 - 2: Excellent - "Highest quality and most credible information source. Unquestionably trustworthy and authoritative."
    
    ✓ PubMed papers, CDC/WHO guidelines, major medical orgs (.org with credentials)
@@ -72,6 +74,10 @@
    
    ✗ Non-expert opinions, subjective testimonials
 
+## 2. KInIT Medical Misinformation Dataset (2022)
+- ~317k medical news articles and blog posts (1998-2022) from 207 reliable/unreliable sources
+- Key Features
+    - Source credibility: Media Bias/Fact Check reliability scores
 
 # REFERENCES
 1. [TREC Health Misinformation Track](https://trec-health-misinfo.github.io)
