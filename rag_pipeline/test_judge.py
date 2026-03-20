@@ -41,6 +41,14 @@ def query_rag(query, return_context=False):
     
     return result["result"]
 
+    if return_context:
+        # Get the retrieved documents for evaluation
+        docs = retriever.get_relevant_documents(query)
+        context_docs = "\n".join([f"Doc {i+1}: {doc.page_content}" for i, doc in enumerate(docs)])
+        return result["result"], context_docs
+
+    return result["result"]
+
 # Judge model evaluation function
 def evaluate_response(query, response, context_docs=None):
     """
@@ -103,11 +111,13 @@ Format your response as:
     return evaluation.content
 
 if __name__ == "__main__":
-    user_query = input("Ask a question: ")
+    # Test query
+    user_query = "What is RAG and how does it work?"
+    print(f"Query: {user_query}")
     print("\n--- RAG Response ---\n")
     response, context_docs = query_rag(user_query, return_context=True)
     print(response)
-    
+
     print("\n--- Judge Model Evaluation ---\n")
     evaluation = evaluate_response(user_query, response, context_docs)
     print(evaluation)

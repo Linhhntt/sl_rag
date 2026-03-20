@@ -2,3 +2,4 @@ rag_pipeline/chroma_db
 *env
 dataset/*jsonl
 dataset/*tar.gz
+rag_pipeline/__pycache__
